@@ -80,19 +80,17 @@
 					</coverage>
 				</configuration>
 			</plugin>
-
 			<plugin>
 				<groupId>org.mule.tools.maven</groupId>
-				<artifactId>mule-app-maven-plugin</artifactId>
-				<version>${mule.tools.version}</version>
+				<artifactId>mule-maven-plugin</artifactId>
+				<version>2.0</version>
 				<configuration>
 					<deploymentType>cloudhub</deploymentType>
 					<muleVersion>3.8.4</muleVersion>
-					<username>TrailAPI</username>
-					<password>rogerThat12@</password>
-					<workerType>Micro</workerType>
+					<username>citrixdev</username>
+					<password>H00dM@rn1D0!</password>
 					<redeploy>true</redeploy>
-					<environment>SANDBOX</environment>
+					<environment>DEV</environment>
 				</configuration>
 				<executions>
 					<execution>
@@ -104,7 +102,13 @@
 					</execution>
 				</executions>
 			</plugin>
-
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
 		</plugins>
 		<testResources>
 			<testResource>
@@ -232,6 +236,10 @@
 			<snapshots>
 				<enabled>false</enabled>
 			</snapshots>
+		</pluginRepository>
+		<pluginRepository>
+			<id>mule-public</id>
+			<url>https://repository.mulesoft.org/nexus/content/repositories/releases</url>
 		</pluginRepository>
 	</pluginRepositories>
 
