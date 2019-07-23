@@ -11,5 +11,6 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
         <http:listener config-ref="HTTP_Listener_Configuration" path="/" doc:name="HTTP"/>
         <set-payload value="#['successs']" doc:name="Set Payload"/>
         <logger message="#[payload]" level="INFO" doc:name="Logger"/>
+        <logger message="checking eGit" level="INFO" doc:name="Logger"/>
     </flow>
 </mule>
